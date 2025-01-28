@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+.calculator {
+  width: 320px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.display {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: right;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons .digits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons .digits div {
+  display: flex;
+  gap: 10px;
+}
+
+/* zero button */
+.buttons .digits div:last-child>button:first-child {
+  flex: 1;
+}
+
+.buttons .operators,
+.buttons .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons .operators button,
+.buttons .controls button {
+  background-color: #f0ad4e;
+  color: white;
+  flex: 1;
+}
+
+button {
+  font-size: 1.5rem;
+  width: 48px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0ad4e;
+}
+
+button:active {
+  background-color: #ec971f;
+}
+
+button:focus {
+  outline: none;
+}
+
+.operators button:hover,
+.controls button:hover {
+  background-color: #ec971f;
+}
+
+.operators button:active,
+.controls button:active {
+  background-color: #d58512;
+}
