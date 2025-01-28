@@ -1,9 +1,13 @@
+const MAX_DISPLAY_LENGTH = 10;
+const EXPONENTIAL_LENGTH = 5;
+
 const display = document.querySelector(".display");
 
 const updateDisplay = (value) => {
   if (typeof value === "number") {
-    if (value.toString().length > 10) {
-      display.textContent = value.toExponential(5);
+    value = parseFloat(value.toFixed(MAX_DISPLAY_LENGTH));
+    if (value.toString().length > MAX_DISPLAY_LENGTH) {
+      display.textContent = value.toExponential(EXPONENTIAL_LENGTH);
     } else {
       display.textContent = value;
     }
@@ -42,7 +46,6 @@ const processDot = () => {
     } else if (!operand1.includes(".")) {
       operand1 += ".";
     } else {
-      console.log("Error");
       allClear();
       updateDisplay("Err: more than 1 .");
       return;
@@ -111,6 +114,8 @@ const processEquals = () => {
       processError();
       return null;
   }
+
+  result = parseFloat(result.toFixed(MAX_DISPLAY_LENGTH));
 
   operand1 = result;
   operand2 = null;
